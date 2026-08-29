@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Core Boilerplate",
-  description: "Next.js project setup with Tailwind CSS, Zustand, and TanStack Query",
+  title: "bbyspine.memo",
+  description: "",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

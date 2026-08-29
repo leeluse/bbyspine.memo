@@ -3,6 +3,23 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Design System Color Tokens */
+  --ink: #171719;
+  --muted: #7c7f83;
+  --paper: #f5f1e8;
+  --paper2: #eee6d8;
+  --lav: #a9b2ff;
+  --mauve: #9b5f91;
+  --navy: #20286f;
+  --mint: #87aea1;
+  --shelf: #383431;
+  --shelf2: #24211f;
+
+  /* Bookshelf Page Background Token */
+  --bookshelf-bg: radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.18) 0 3%, transparent 3.3%),
+                   radial-gradient(circle at 78% 10%, rgba(255, 255, 255, 0.10) 0 4%, transparent 4.3%),
+                   linear-gradient(180deg, #2d18ff 0%, #2914f2 40%, #2512db 100%);
 }
 
 @theme inline {
@@ -10,6 +27,21 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Design System Color Mappings */
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-paper: var(--paper);
+  --color-paper2: var(--paper2);
+  --color-lav: var(--lav);
+  --color-mauve: var(--mauve);
+  --color-navy: var(--navy);
+  --color-mint: var(--mint);
+  --color-shelf: var(--shelf);
+  --color-shelf2: var(--shelf2);
+
+  /* Design System Background Gradients */
+  --background-image-bookshelf: var(--bookshelf-bg);
 }
 
 @media (prefers-color-scheme: dark) {
