@@ -29,16 +29,16 @@ Archive.add({
   workspace: "ws-bookshelf",
   status: "ready",
   css: `
-    .add-book-btn { height:38px; padding:0 18px; border:1px solid rgba(210,225,255,.62); border-radius:19px; background:linear-gradient(180deg,#F8FBFF,#DCE9FF); color:#3955BE; box-shadow:0 8px 18px rgba(20,20,85,.18); font:13px/1 "Outfit",sans-serif; letter-spacing:.015em; font-weight:400; cursor:pointer; transition:transform .2s cubic-bezier(.16,1,.3,1),filter .2s ease,box-shadow .2s ease; }
+    .add-book-btn { height:38px; padding:0 18px; border:1px solid var(--btn-border); border-radius:19px; background:linear-gradient(180deg,var(--btn-blue-light),var(--btn-blue-mid)); color:var(--btn-blue); box-shadow:0 8px 18px rgba(20,20,85,.18); font:13px/1 "Outfit",sans-serif; letter-spacing:.015em; font-weight:400; cursor:pointer; transition:transform .2s cubic-bezier(.16,1,.3,1),filter .2s ease,box-shadow .2s ease; }
     .add-book-btn:hover { transform:translateY(-2px); filter:brightness(1.04); box-shadow:inset 0 1px #fff,0 9px 20px rgba(57,85,190,.22); }
     .add-book-btn:active { transform:translateY(1px) scale(.98); }
     .add-book-btn span { margin-right:5px; font-size:14px; vertical-align:-1px; }
   `,
   html: `<button class="add-book-btn"><span>＋</span>add book</button>`,
   spec: {
-    colors: { background: "#F8FBFF → #DCE9FF", text: "#3955BE", border: "rgba(210,225,255,.62)" },
-    size: { height: "38px", radius: "19px", font: "13px / 400 Outfit" },
-    spacing: { padding: "0 18px", iconGap: "5px" }
+    colors: { background: "var(--btn-blue-light) → var(--btn-blue-mid)", text: "var(--btn-blue)", border: "var(--btn-border)" },
+    size: { width: "108px", height: "38px", radius: "19px", font: "13px / 400 Outfit" },
+    spacing: { margin: "0px", padding: "0 18px", iconGap: "5px" }
   }
 });
 
