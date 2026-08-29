@@ -3,13 +3,84 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+
+  /* Bookshelf Page Background Token */
+  --bookshelf-bg: linear-gradient(180deg, var(--bookshelf-bg-start) 0%, var(--bookshelf-bg-mid) 40%, var(--bookshelf-bg-end) 100%);
+
+  /* Brand Header Tokens */
+  --brand-title: #ffc2e3;
+  --brand-stroke: #ff2cb4;
+  --brand-desc: #d6f4f2;
+
+  /* Added Design System Tokens */
+  --btn-blue: #3955be;
+  --btn-blue-light: #f8fbff;
+  --btn-blue-mid: #dce9ff;
+  --btn-border: rgba(210, 225, 255, 0.62);
+
+  --bookshelf-bg-start: #2d18ff;
+  --bookshelf-bg-mid: #2914f2;
+  --bookshelf-bg-end: #2512db;
+
+  --catalog-book-text: #242d68;
+  --catalog-title-text: #35457f;
+  --catalog-empty-text: #5264aa;
+  --catalog-border: rgba(180, 204, 255, 0.48);
+  --catalog-bg-start: rgba(255, 255, 255, 0.28);
+  --catalog-bg-end: rgba(195, 215, 255, 0.2);
+
+  --btn-sec-border: rgba(151, 177, 231, 0.5);
+  --btn-sec-bg: rgba(248, 251, 255, 0.55);
+  --btn-sec-text: var(--catalog-empty-text);
+
+  --btn-pri-border: rgba(255, 44, 180, 0.38);
+  --btn-pri-bg-start: #ffd8ee;
+  --btn-pri-bg-end: var(--accent-pink);
+  --btn-pri-text: #7e2460;
+  --btn-pri-hover-text: #641849;
+  --accent-pink: #ff9fd8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-outfit), var(--font-noto-sans-kr), var(--font-geist-sans), sans-serif;
   --font-mono: var(--font-geist-mono);
+
+
+  /* Brand Header Mappings */
+  --color-brand-title: var(--brand-title);
+  --color-brand-stroke: var(--brand-stroke);
+  --color-brand-desc: var(--brand-desc);
+  --font-serif-brand: Georgia, "Times New Roman", serif;
+
+  /* Tailwind Color Mappings */
+  --color-btn-blue: var(--btn-blue);
+  --color-btn-blue-light: var(--btn-blue-light);
+  --color-btn-blue-mid: var(--btn-blue-mid);
+  --color-btn-border: var(--btn-border);
+  --color-bookshelf-bg-start: var(--bookshelf-bg-start);
+  --color-bookshelf-bg-mid: var(--bookshelf-bg-mid);
+  --color-bookshelf-bg-end: var(--bookshelf-bg-end);
+  --color-catalog-book-text: var(--catalog-book-text);
+  --color-catalog-title-text: var(--catalog-title-text);
+  --color-catalog-empty-text: var(--catalog-empty-text);
+  --color-catalog-border: var(--catalog-border);
+  --color-catalog-bg-start: var(--catalog-bg-start);
+  --color-catalog-bg-end: var(--catalog-bg-end);
+  --color-btn-sec-border: var(--btn-sec-border);
+  --color-btn-sec-bg: var(--btn-sec-bg);
+  --color-btn-sec-text: var(--btn-sec-text);
+  --color-btn-pri-border: var(--btn-pri-border);
+  --color-btn-pri-bg-start: var(--btn-pri-bg-start);
+  --color-btn-pri-bg-end: var(--btn-pri-bg-end);
+  --color-btn-pri-text: var(--btn-pri-text);
+  --color-btn-pri-hover-text: var(--btn-pri-hover-text);
+  --color-accent-pink: var(--accent-pink);
+
+  /* Design System Background Gradients */
+  --background-image-bookshelf: var(--bookshelf-bg);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +93,25 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Brand Logo component style matching the prototype */
+.brand-title {
+  margin: 0;
+  font: italic bold 46px/1 Georgia, "Times New Roman", serif;
+  font-family: var(--font-serif-brand);
+  color: var(--brand-title);
+  -webkit-text-stroke: 0.8px var(--brand-stroke);
+  text-shadow: 0 1.5px 0 rgba(0, 0, 0, 0.18);
+  letter-spacing: -0.5px;
+}
+
+.brand-desc {
+  margin: 8px 0 0;
+  max-width: 520px;
+  color: var(--brand-desc);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  font: 13px/1.45 Georgia, "Times New Roman", serif;
+  font-family: var(--font-serif-brand);
 }
