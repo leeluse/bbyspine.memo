@@ -1,13 +1,12 @@
 import AcrylicShelf from "./AcrylicShelf";
-import BookSpine from "./BookSpine";
+import BookSpineList from "../bookspine/BookSpineList";
 
 export default function BookShelf() {
   return (
     <div className="py-20 flex flex-col items-center">
-    <div className=" flex justify-center items-center">
-
-    </div>
+        <BookSpineList />
         <AcrylicShelf />
     </div>
   )
 }
+
