@@ -3,7 +3,7 @@ import PlusIcon from "../icons/PlusIcon";
 
 export default function Header() {
     return (
-        <header className="h-fit p-5 flex justify-between">
+        <header className="h-fit p-5 flex flex-col gap-5 justify-between items-end sm:items-center sm:flex-row sm:gap-0">
             <Logo />
             <CommonBtn label="Add book" color="blue" icon={<PlusIcon />} />
         </header>

@@ -12,7 +12,7 @@ export default function CommonBtn({
     icon?: React.ReactNode
 }) {
     return (
-        <button className={`cursor-pointer rounded-full px-4 py-2 text-sm border h-fit flex items-center gap-1.5 font-medium ${COLOR[color]}`}>
+        <button className={`w-fit cursor-pointer rounded-full px-4 py-2 text-sm border h-fit flex items-center gap-1.5 font-medium ${COLOR[color]}`}>
             {icon}
             <span>{label}</span>
         </button>
