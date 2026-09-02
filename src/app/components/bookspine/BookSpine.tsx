@@ -14,6 +14,7 @@ export default function BookSpine({ id, title, size, theme }: Book) {
         src={`/images/spines/${theme}.webp`} 
         alt={`${id} book spine`} 
         fill 
+        sizes='(max-width: 640px) 5vw, 10vw'
         className='object-cover select-none pb-1'/>
     </div>
   );
