@@ -1,5 +1,9 @@
+export type BookSize = 'xs' | 'sm' | 'md' | 'lg';
+
 export interface Book {
+    id: string;
     title: string;
-    authors: string;
-    rating: number;
+    rating?: number;
+    size: BookSize;
+    theme: number | string;
 }
