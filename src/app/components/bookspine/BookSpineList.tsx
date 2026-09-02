@@ -1,12 +1,13 @@
-import { MOCK_BOOKS } from '@/data/books'
-import BookSpine from './BookSpine'
+import { MOCK_BOOKS } from '@/data/books';
+import BookSpine from './BookSpine';
 
 export default function BookSpineList() {
   return (
-        <div className=" flex justify-center items-center h-80 sm:h-140 w-12 sm:w-20">
-            {MOCK_BOOKS.map((book) => (
-                <BookSpine key={book.rating} spine={{...book}} />
-            ))}
-        </div>
-    )
+    <div className="flex items-end justify-center gap-1.5 sm:gap-2 px-4 max-w-full z-10 -mb-1">
+      {MOCK_BOOKS.map((book) => (
+        <BookSpine key={book.id} spine={book} />
+      ))}
+    </div>
+  );
 }
+

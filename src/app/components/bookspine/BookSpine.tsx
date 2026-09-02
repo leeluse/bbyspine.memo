@@ -1,13 +1,20 @@
-import { Book } from '@/types/book';
-
-interface BookSpineProps {
-    spine: Book;
-}
+import Image from 'next/image';
+import { BookSpineProps } from '@/types/book';
 
 export default function BookSpine({ spine }: BookSpineProps) {
+  const SIZE = { h: 'h-64 lg:h-80', w: 'w-6 sm:w-8 md:w-10 lg:w-12' };
+
   return (
-    <div className='bg-sky-400 h-80 sm:h-140 w-12 sm:w-20 border flex items-center justify-center p-2 text-center text-white font-bold text-xs select-none'>
-        {spine.title}
+    <div
+      className={`relative ${SIZE.h} ${SIZE.w} rounded-xs overflow-hidden cursor-pointer shadow-lg duration-100 hover:-translate-y-3`}
+      title={spine.title}
+    >
+      <Image 
+        src={`/images/spines/${spine.theme}.webp`} 
+        alt={spine.title} 
+        fill 
+        className='object-cover select-none pb-1'/>
     </div>
-  )
+  );
 }
+

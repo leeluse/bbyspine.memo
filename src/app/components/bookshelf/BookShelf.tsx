@@ -3,7 +3,7 @@ import BookSpineList from "../bookspine/BookSpineList";
 
 export default function BookShelf() {
   return (
-    <div className="py-20 flex flex-col items-center">
+    <div className="flex-1 flex flex-col items-center justify-center">
         <BookSpineList />
         <AcrylicShelf />
     </div>

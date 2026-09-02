@@ -15,7 +15,7 @@ export function Logo() {
     return (
         <div className="flex flex-col gap-2">
             <h1 className="brand-title">bbyspine.memo</h1>
-            <p className="brand-desc">your tiny archive. every book is a place to collect images, scraps and things you don't want to forget.</p>
+            <p className="brand-desc">your tiny archive. every book is a place to collect images, scraps and things you don&apos;t want to forget.</p>
         </div>
     )
 }
