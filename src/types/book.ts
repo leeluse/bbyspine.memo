@@ -1,11 +1,9 @@
-export interface Book {
-    id: string
-    title: string;
-    authors: string;
-    rating: number;
-    theme: number | string;
-}
+export type BookSize = 'xs' | 'sm' | 'md' | 'lg';
 
-export interface BookSpineProps {
-    spine: Book;
+export interface Book {
+    id: string;
+    title: string;
+    rating?: number;
+    size: BookSize;
+    theme: number | string;
 }

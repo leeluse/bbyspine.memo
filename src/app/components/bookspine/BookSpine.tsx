@@ -1,17 +1,18 @@
 import Image from 'next/image';
-import { BookSpineProps } from '@/types/book';
+import { Book } from '@/types/book';
+import { BOOK_SIZES } from '@/data/books';
 
-export default function BookSpine({ spine }: BookSpineProps) {
-  const SIZE = { h: 'h-64 lg:h-80', w: 'w-6 sm:w-8 md:w-10 lg:w-12' };
+
+export default function BookSpine({ id, title, size, theme }: Book) {
 
   return (
     <div
-      className={`relative ${SIZE.h} ${SIZE.w} rounded-xs overflow-hidden cursor-pointer shadow-lg duration-100 hover:-translate-y-3`}
-      title={spine.title}
+      className={`relative ${BOOK_SIZES[size].h} ${BOOK_SIZES[size].w} rounded-xs overflow-hidden cursor-pointer shadow-lg duration-100 hover:-translate-y-3`}
+      title={title}
     >
       <Image 
-        src={`/images/spines/${spine.theme}.webp`} 
-        alt={spine.title} 
+        src={`/images/spines/${theme}.webp`} 
+        alt={`${id} book spine`} 
         fill 
         className='object-cover select-none pb-1'/>
     </div>
