@@ -4,9 +4,8 @@
   --background: #ffffff;
   --foreground: #171717;
 
-
   /* Bookshelf Page Background Token */
-  --bookshelf-bg: linear-gradient(180deg, var(--bookshelf-bg-start) 0%, var(--bookshelf-bg-mid) 40%, var(--bookshelf-bg-end) 100%);
+  --bookshelf-bg: linear-gradient(180deg, #3828d8 0%, #3425cc 40%, #3021b8 100%);
 
   /* Brand Header Tokens */
   --brand-title: #ffc2e3;
@@ -19,9 +18,6 @@
   --btn-blue-mid: #dce9ff;
   --btn-border: rgba(210, 225, 255, 0.62);
 
-  --bookshelf-bg-start: #2d18ff;
-  --bookshelf-bg-mid: #2914f2;
-  --bookshelf-bg-end: #2512db;
 
   --catalog-book-text: #242d68;
   --catalog-title-text: #35457f;
@@ -81,6 +77,8 @@
 
   /* Design System Background Gradients */
   --background-image-bookshelf: var(--bookshelf-bg);
+  --background-image-modal: var(--modal-bg);
+  --color-modal-border: var(--modal-border);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -96,22 +94,23 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Brand Logo component style matching the prototype */
-.brand-title {
-  margin: 0;
-  font: italic bold 46px/1 Georgia, "Times New Roman", serif;
-  font-family: var(--font-serif-brand);
-  color: var(--brand-title);
+.title-shadow {
   -webkit-text-stroke: 0.8px var(--brand-stroke);
   text-shadow: 0 1.5px 0 rgba(0, 0, 0, 0.18);
-  letter-spacing: -0.5px;
 }
 
-.brand-desc {
-  margin: 8px 0 0;
-  max-width: 520px;
-  color: var(--brand-desc);
+.desc-shadow {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-  font: 13px/1.45 Georgia, "Times New Roman", serif;
-  font-family: var(--font-serif-brand);
+}
+
+
+.modal {
+  background: linear-gradient(145deg, rgba(248, 251, 255, .78), rgba(205, 220, 255, .48));
+  border: 1px solid rgba(220, 235, 255, .68);
+  width: min(620px, calc(100vw - 34px));
+  overflow: visible;
+  border-radius: 24px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .95), inset 0 -1px 0 rgba(120, 140, 220, .18), 0 35px 90px rgba(20, 20, 85, .28), 0 8px 24px rgba(255, 44, 180, .12);
+  backdrop-filter: blur(26px) saturate(1.25);
+  -webkit-backdrop-filter: blur(26px) saturate(1.25);
 }
