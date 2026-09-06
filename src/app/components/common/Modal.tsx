@@ -7,7 +7,16 @@ import { useEffect } from "react";
 export default function Modal() {
     const { activeModal, closeModal } = useModalStore();
 
+    useEffect(() => {
+        function handleKeyDown(e: KeyboardEvent) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        }
 
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+    }, [closeModal])
 
 
     return (
