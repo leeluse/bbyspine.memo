@@ -2,15 +2,23 @@
 
 import { useModalStore } from "@/store/useModalStore"
 import { AddBookModal } from "@/app/components"
+import { useEffect } from "react";
 
 export default function Modal() {
-    const { activeModal } = useModalStore();
+    const { activeModal, closeModal } = useModalStore();
+
+
+
 
     return (
         <>
             {activeModal &&
-                <div className="absolute inset-0 bg-gray-950/50 z-999 flex items-center justify-center">
-                    {activeModal === 'addBook' && <AddBookModal />}
+                <div
+                    onClick={closeModal}
+                    className="absolute inset-0 bg-gray-950/50 z-999 flex items-center justify-center">
+                    <div onClick={(e) => e.stopPropagation()}>
+                        {activeModal === 'addBook' && <AddBookModal />}
+                    </div>
                 </div>}
         </>
     )
