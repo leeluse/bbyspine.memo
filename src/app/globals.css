@@ -5,8 +5,12 @@
   --foreground: #171717;
 
   /* Bookshelf Page Background Token */
-  --bookshelf-bg:
-    linear-gradient(180deg, #2D18FF 0%, #2914F2 40%, #2512DB 100%);
+  --bookshelf-bg: linear-gradient(
+    180deg,
+    #2d18ff 0%,
+    #2914f2 40%,
+    #2512db 100%
+  );
 
   /* Brand Header Tokens */
   --brand-title: #ffc2e3;
@@ -18,7 +22,6 @@
   --btn-blue-light: #f8fbff;
   --btn-blue-mid: #dce9ff;
   --btn-border: rgba(210, 225, 255, 0.62);
-
 
   --catalog-book-text: #242d68;
   --catalog-title-text: #35457f;
@@ -42,9 +45,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-outfit), var(--font-noto-sans-kr), var(--font-geist-sans), sans-serif;
+  --font-sans:
+    var(--font-outfit), var(--font-noto-sans-kr), var(--font-geist-sans),
+    sans-serif;
   --font-mono: var(--font-geist-mono);
-
 
   /* Brand Header Mappings */
   --color-brand-title: var(--brand-title);
@@ -104,12 +108,16 @@ body {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
 }
 
-
 /* 1. 순수한 유리 질감만 담당 (어디든 재사용 가능!) */
 .glass-panel {
-  background: linear-gradient(145deg, rgba(248, 251, 255, .78), rgba(205, 220, 255, .48));
-  border: 1px solid rgba(220, 235, 255, .68);
+  background: linear-gradient(
+    145deg,
+    rgba(248, 251, 255, 0.78),
+    rgba(205, 220, 255, 0.48)
+  );
+  border: 1px solid rgba(220, 235, 255, 0.68);
   border-radius: 28px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9),
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
     0 20px 50px rgba(20, 20, 85, 0.25);
 }

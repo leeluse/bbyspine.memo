@@ -1,46 +1,44 @@
 import { useModalStore } from "@/store/useModalStore";
-import { ShelfCarousel, CommonBtn, CatalogBookList } from "@/app/components/index";
+import {
+  ShelfCarousel,
+  CommonBtn,
+  CatalogBookList,
+} from "@/app/components/index";
 
 export default function AddBookModal() {
-    return (
-        <section className="glass-panel min-h-1/2 p-6 flex flex-col">
-            <AddBookModalHeader />
-            <div className="flex-1 h-full flex flex-col justify-between">
-                <ShelfCarousel>
-                    <CatalogBookList />
-                </ShelfCarousel>
-                <ButtonGroup />
-            </div>
-        </section>
-    )
+  return (
+    <section className="glass-panel flex min-h-1/2 flex-col p-6">
+      <AddBookModalHeader />
+      <div className="flex h-full flex-1 flex-col justify-between">
+        <ShelfCarousel>
+          <CatalogBookList />
+        </ShelfCarousel>
+        <ButtonGroup />
+      </div>
+    </section>
+  );
 }
-
 
 export function AddBookModalHeader() {
-    return (
-        <header className="rounded py-4 text-center h-1/3">
-            <p className="text-brand-stroke">✦</p>
-            <small className="font-bold text-btn-blue mb-1 tracking-widest uppercase text-xs">book catalog</small>
-            <h2 className="text-brand-stroke  font-bold text-[28px] font-serif-brand italic ">which book should join the shelf?</h2>
-        </header>
-    )
+  return (
+    <header className="h-1/3 rounded py-4 text-center">
+      <p className="text-brand-stroke">✦</p>
+      <small className="mb-1 text-xs font-bold tracking-widest text-btn-blue uppercase">
+        book catalog
+      </small>
+      <h2 className="font-serif-brand text-[28px] font-bold text-brand-stroke italic">
+        which book should join the shelf?
+      </h2>
+    </header>
+  );
 }
 
-
 export function ButtonGroup() {
-    const { closeModal } = useModalStore()
-    return (
-        <div className="w-full gap-2 inline-flex items-center justify-center my-3">
-            <CommonBtn
-                label="cancel"
-                color="blue"
-                onClick={closeModal}
-            />
-            <CommonBtn
-                label="add to shelf"
-                color="pink"
-                onClick={() => { }}
-            />
-        </div>
-    )
+  const { closeModal } = useModalStore();
+  return (
+    <div className="my-3 inline-flex w-full items-center justify-center gap-2">
+      <CommonBtn label="cancel" color="blue" onClick={closeModal} />
+      <CommonBtn label="add to shelf" color="pink" onClick={() => {}} />
+    </div>
+  );
 }

@@ -1,14 +1,12 @@
-export type BookSize = 'xs' | 'sm' | 'md' | 'lg';
+export type BookSize = "xs" | "sm" | "md" | "lg";
 
 export interface Spine {
-    id: string;
-    theme: number; // 1 ~ 10 (이미지 번호)
+  id: string;
+  title: string;
+  theme: number;
 }
 
-export interface Book {
-    id: string;
-    title: string;
-    rating?: number;
-    size: BookSize;
-    theme: number | string;
+export interface Book extends Spine {
+  size: BookSize;
+  rating?: number;
 }

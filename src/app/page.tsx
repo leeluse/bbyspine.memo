@@ -2,10 +2,10 @@ import { Header, BookShelf, Modal } from "@/app/components";
 
 export default function Home() {
   return (
-    <main className="bg-bookshelf min-h-screen flex flex-col">
+    <main className="flex min-h-screen flex-col bg-bookshelf">
       <Header />
       <BookShelf />
       <Modal />
     </main>
-  )
+  );
 }
