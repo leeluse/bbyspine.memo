@@ -1,6 +1,6 @@
 const COLOR = {
-  blue: "bg-linear-to-b from-btn-blue-light to-btn-blue-mid border-btn-border text-btn-blue",
-  pink: "bg-linear-to-b from-btn-pri-bg-start to-btn-pri-bg-end border-btn-pri-border text-btn-pri-text",
+  blue: "bg-btn-blue text-secondary-foreground border-border",
+  pink: "bg-btn-pink text-primary-foreground border-primary/40",
 } as const;
 
 export default function CommonBtn({

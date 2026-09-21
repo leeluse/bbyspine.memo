@@ -23,10 +23,10 @@ export function AddBookModalHeader() {
   return (
     <header className="h-1/3 rounded py-4 text-center">
       <p className="text-brand-stroke">✦</p>
-      <small className="mb-1 text-xs font-bold tracking-widest text-btn-blue uppercase">
+      <small className="text-secondary-foreground mb-1 text-xs font-bold tracking-widest uppercase">
         book catalog
       </small>
-      <h2 className="font-serif-brand text-[28px] font-bold text-brand-stroke italic">
+      <h2 className="font-serif-brand text-brand-stroke text-[28px] font-bold italic">
         which book should join the shelf?
       </h2>
     </header>

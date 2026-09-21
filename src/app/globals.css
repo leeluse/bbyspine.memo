@@ -1,123 +1,74 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #171717;
 
-  /* Bookshelf Page Background Token */
-  --bookshelf-bg: linear-gradient(
+  --color-brand-title: #ffc2e3;
+  --color-brand-stroke: #ff2cb4;
+  --color-brand-desc: #d6f4f2;
+
+  --color-primary: #ff9fd8;
+  --color-primary-foreground: #7e2460;
+
+  --color-secondary: rgb(248 251 255 / 55%);
+  --color-secondary-foreground: #5264aa;
+
+  --color-surface: rgb(255 255 255 / 28%);
+  --color-surface-muted: rgb(195 215 255 / 20%);
+
+  --color-border: rgb(180 204 255 / 48%);
+
+  --font-sans:
+    var(--font-outfit), var(--font-noto-sans-kr), var(--font-geist-sans),
+    sans-serif;
+
+  --font-mono: var(--font-geist-mono);
+  --font-serif-brand: Georgia, "Times New Roman", serif;
+
+  --background-image-bookshelf: linear-gradient(
     180deg,
     #2d18ff 0%,
     #2914f2 40%,
     #2512db 100%
   );
 
-  /* Brand Header Tokens */
-  --brand-title: #ffc2e3;
-  --brand-stroke: #ff2cb4;
-  --brand-desc: #d6f4f2;
-
-  /* Added Design System Tokens */
-  --btn-blue: #3955be;
-  --btn-blue-light: #f8fbff;
-  --btn-blue-mid: #dce9ff;
-  --btn-border: rgba(210, 225, 255, 0.62);
-
-  --catalog-book-text: #242d68;
-  --catalog-title-text: #35457f;
-  --catalog-empty-text: #5264aa;
-  --catalog-border: rgba(180, 204, 255, 0.48);
-  --catalog-bg-start: rgba(255, 255, 255, 0.28);
-  --catalog-bg-end: rgba(195, 215, 255, 0.2);
-
-  --btn-sec-border: rgba(151, 177, 231, 0.5);
-  --btn-sec-bg: rgba(248, 251, 255, 0.55);
-  --btn-sec-text: var(--catalog-empty-text);
-
-  --btn-pri-border: rgba(255, 44, 180, 0.38);
-  --btn-pri-bg-start: #ffd8ee;
-  --btn-pri-bg-end: var(--accent-pink);
-  --btn-pri-text: #7e2460;
-  --btn-pri-hover-text: #641849;
-  --accent-pink: #ff9fd8;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans:
-    var(--font-outfit), var(--font-noto-sans-kr), var(--font-geist-sans),
-    sans-serif;
-  --font-mono: var(--font-geist-mono);
-
-  /* Brand Header Mappings */
-  --color-brand-title: var(--brand-title);
-  --color-brand-stroke: var(--brand-stroke);
-  --color-brand-desc: var(--brand-desc);
-  --font-serif-brand: Georgia, "Times New Roman", serif;
-
-  /* Tailwind Color Mappings */
-  --color-btn-blue: var(--btn-blue);
-  --color-btn-blue-light: var(--btn-blue-light);
-  --color-btn-blue-mid: var(--btn-blue-mid);
-  --color-btn-border: var(--btn-border);
-  --color-bookshelf-bg-start: var(--bookshelf-bg-start);
-  --color-bookshelf-bg-mid: var(--bookshelf-bg-mid);
-  --color-bookshelf-bg-end: var(--bookshelf-bg-end);
-  --color-catalog-book-text: var(--catalog-book-text);
-  --color-catalog-title-text: var(--catalog-title-text);
-  --color-catalog-empty-text: var(--catalog-empty-text);
-  --color-catalog-border: var(--catalog-border);
-  --color-catalog-bg-start: var(--catalog-bg-start);
-  --color-catalog-bg-end: var(--catalog-bg-end);
-  --color-btn-sec-border: var(--btn-sec-border);
-  --color-btn-sec-bg: var(--btn-sec-bg);
-  --color-btn-sec-text: var(--btn-sec-text);
-  --color-btn-pri-border: var(--btn-pri-border);
-  --color-btn-pri-bg-start: var(--btn-pri-bg-start);
-  --color-btn-pri-bg-end: var(--btn-pri-bg-end);
-  --color-btn-pri-text: var(--btn-pri-text);
-  --color-btn-pri-hover-text: var(--btn-pri-hover-text);
-  --color-accent-pink: var(--accent-pink);
-
-  /* Design System Background Gradients */
-  --background-image-bookshelf: var(--bookshelf-bg);
-  --background-image-modal: var(--modal-bg);
-  --color-modal-border: var(--modal-border);
+  --background-image-btn-pink: linear-gradient(180deg, #ffd8ee, #ff9fd8);
+  --background-image-btn-blue: linear-gradient(180deg, #f8fbff, #dce9ff);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-background: #0a0a0a;
+    --color-foreground: #ededed;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+  @apply bg-background text-foreground font-sans;
 }
 
 .title-shadow {
-  -webkit-text-stroke: 0.8px var(--brand-stroke);
-  text-shadow: 0 1.5px 0 rgba(0, 0, 0, 0.18);
+  -webkit-text-stroke: 0.8px var(--color-brand-stroke);
+  text-shadow: 0 1.5px 0 rgb(0 0 0 / 18%);
 }
 
 .desc-shadow {
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  text-shadow: 0 1px 0 rgb(0 0 0 / 8%);
 }
 
-/* 1. 순수한 유리 질감만 담당 (어디든 재사용 가능!) */
 .glass-panel {
+  @apply rounded-[28px] border backdrop-blur-2xl;
+
   background: linear-gradient(
     145deg,
-    rgba(248, 251, 255, 0.78),
-    rgba(205, 220, 255, 0.48)
+    rgb(248 251 255 / 78%),
+    rgb(205 220 255 / 48%)
   );
-  border: 1px solid rgba(220, 235, 255, 0.68);
-  border-radius: 28px;
+
+  border-color: rgb(220 235 255 / 68%);
+
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 20px 50px rgba(20, 20, 85, 0.25);
+    inset 0 1px 0 rgb(255 255 255 / 90%),
+    0 20px 50px rgb(20 20 85 / 25%);
 }

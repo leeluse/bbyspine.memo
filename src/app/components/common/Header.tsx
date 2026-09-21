@@ -27,10 +27,10 @@ export default function Header() {
 export function Logo() {
   return (
     <div className="flex flex-col gap-2">
-      <h1 className="title-shadow font-serif-brand text-[46px] leading-none font-bold tracking-[-0.5px] text-brand-title italic">
+      <h1 className="title-shadow font-serif-brand text-brand-title text-[46px] leading-none font-bold tracking-[-0.5px] italic">
         bbyspine.memo
       </h1>
-      <p className="desc-shadow mt-2 max-w-130 text-[13px] font-semibold">
+      <p className="desc-shadow text-brand-desc mt-2 max-w-130 text-[13px] font-semibold">
         your tiny archive. every book is a place to collect images, scraps and
         things you don&apos;t want to forget.
       </p>
