@@ -20,3 +20,5 @@ export { default as ShelfCarousel } from "./carousel/ShelfCarousel";
 // Book Spine
 export { default as BookSpineList } from "./bookspine/BookSpineList";
 export { default as BookSpine } from "./bookspine/BookSpine";
+export { default as CatalogBookList } from "./bookspine/CatalogBookList";
+export { default as CatalogBookItem } from "./bookspine/CatalogBookItem";

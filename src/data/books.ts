@@ -1,4 +1,5 @@
 import { Book, BookSize } from "@/types/book";
+import { SPINES } from "./spines";
 
 export const MOCK_BOOKS: Book[] = [
   {
@@ -6,70 +7,70 @@ export const MOCK_BOOKS: Book[] = [
     title: "archive vol. 07",
     rating: 1,
     size: 'lg',
-    theme: 1,
+    theme: SPINES[0].theme,
   },
   {
     id: "2",
     title: "striped archive",
     rating: 2,
     size: 'sm',
-    theme: 2,
+    theme: SPINES[1].theme,
   },
   {
     id: "3",
     title: "bbyspine",
     rating: 3,
     size: 'sm',
-    theme: 3,
+    theme: SPINES[2].theme,
   },
   {
     id: "4",
     title: "palm textile archive",
     rating: 4,
     size: 'xs',
-    theme: 4,
+    theme: SPINES[3].theme,
   },
   {
     id: "5",
     title: "neon type archive",
     rating: 5,
     size: 'md',
-    theme: 5,
+    theme: SPINES[4].theme,
   },
   {
     id: "6",
     title: "halftone archive",
     rating: 6,
     size: 'lg',
-    theme: 6,
+    theme: SPINES[5].theme,
   },
   {
     id: "7",
     title: "bby archive",
     rating: 7,
     size: 'xs',
-    theme: 7,
+    theme: SPINES[6].theme,
   },
   {
     id: "8",
     title: "blue branch archive",
     rating: 8,
     size: 'md',
-    theme: 8,
+    theme: SPINES[7].theme,
   },
   {
     id: "9",
     title: "palm beach archive",
     rating: 9,
     size: 'lg',
-    theme: 9,
+    theme: SPINES[8].theme,
   },
   {
     id: "10",
     title: "palm mountain archive",
     rating: 10,
     size: 'md',
-    theme: 10,
+    theme: SPINES[9].theme,
   },
 ];
 

@@ -1,7 +1,9 @@
-import React from 'react'
+import { ReactNode } from "react";
 
-export default function ShelfCarousel() {
+export default function ShelfCarousel({ children }: { children: ReactNode }) {
     return (
-        <div className=''>ShelfCarousel</div>
+        <div className='glass-panel max-w-xl'>
+            {children}
+        </div>
     )
 }
