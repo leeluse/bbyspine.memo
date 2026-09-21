@@ -17,3 +17,13 @@ export interface Book extends Spine {
   size: BookSize;
   rating?: number;
 }
+
+export interface ICatalogBookItem extends Spine {
+  isSelected?: boolean;
+  onClick?: () => void;
+}
+
+export interface ICatalogBookListProps {
+  selected: string | null;
+  setSelected: (id: string) => void;
+}

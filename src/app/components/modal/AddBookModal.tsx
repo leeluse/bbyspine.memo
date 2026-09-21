@@ -1,3 +1,4 @@
+"use client";
 import { useModalStore } from "@/store/useModalStore";
 import {
   ShelfCarousel,
@@ -5,14 +6,16 @@ import {
   CatalogBookList,
 } from "@/app/components/index";
 import { MODAL_COPY } from "@/constants/copy";
+import { useState } from "react";
 
 export default function AddBookModal() {
+  const [selected, setSelected] = useState<string | null>(null);
   return (
     <section className="glass-panel flex min-h-1/2 flex-col p-6">
       <AddBookModalHeader />
       <div className="flex h-full flex-1 flex-col justify-between">
         <ShelfCarousel>
-          <CatalogBookList />
+          <CatalogBookList selected={selected} setSelected={setSelected} />
         </ShelfCarousel>
         <ButtonGroup />
       </div>
@@ -37,7 +40,7 @@ export function AddBookModalHeader() {
 export function ButtonGroup() {
   const { closeModal } = useModalStore();
   return (
-    <div className="my-3 inline-flex w-full items-center justify-center gap-2">
+    <div className="inline-flex w-full items-center justify-center gap-2 pt-7 pb-3">
       <CommonBtn
         label={MODAL_COPY.BUTTON_CANCEL}
         color="blue"

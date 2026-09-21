@@ -1,16 +1,26 @@
-"use client";
-import { Spine } from "@/types/book";
+import { ICatalogBookItem } from "@/types/book";
 import Image from "next/image";
 
-export default function CatalogBookItem({ id, title, theme }: Spine) {
+const SELECTED_STYLE =
+  "aria-selected:-translate-y-2.5 aria-selected:bg-white/50 aria-selected:ring-1 aria-selected:ring-primary aria-selected:shadow-lg aria-selected:shadow-primary/20";
+
+export default function CatalogBookItem({
+  id,
+  title,
+  theme,
+  isSelected,
+  onClick,
+}: ICatalogBookItem) {
   return (
     <div
       key={id}
-      className="hover:shadow-primary/30 my-3 flex shrink-0 flex-col items-center gap-2 rounded-xl p-2.5 text-center duration-150 hover:-translate-y-1 hover:bg-white/35 hover:shadow-lg focus:ring-pink-400"
+      onClick={onClick}
+      aria-selected={isSelected}
+      className={`my-3 flex shrink-0 cursor-pointer flex-col items-center gap-2 rounded-xl p-2.5 text-center duration-150 hover:-translate-y-1 hover:bg-white/35 hover:shadow-lg ${SELECTED_STYLE}`}
     >
       <div className="relative flex size-full h-35 w-15 flex-col">
         <Image
-          className="rounded object-cover"
+          className="rounded object-cover select-none"
           fill
           src={`/images/spines/${theme}.webp`}
           alt={`${id}-${title}`}
