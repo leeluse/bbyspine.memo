@@ -4,6 +4,7 @@ import {
   CommonBtn,
   CatalogBookList,
 } from "@/app/components/index";
+import { MODAL_COPY } from "@/constants/copy";
 
 export default function AddBookModal() {
   return (
@@ -24,10 +25,10 @@ export function AddBookModalHeader() {
     <header className="h-1/3 rounded py-4 text-center">
       <p className="text-brand-stroke">✦</p>
       <small className="text-secondary-foreground mb-1 text-xs font-bold tracking-widest uppercase">
-        book catalog
+        {MODAL_COPY.BADGE}
       </small>
       <h2 className="font-serif-brand text-brand-stroke text-[28px] font-bold italic">
-        which book should join the shelf?
+        {MODAL_COPY.HEADING}
       </h2>
     </header>
   );
@@ -37,8 +38,16 @@ export function ButtonGroup() {
   const { closeModal } = useModalStore();
   return (
     <div className="my-3 inline-flex w-full items-center justify-center gap-2">
-      <CommonBtn label="cancel" color="blue" onClick={closeModal} />
-      <CommonBtn label="add to shelf" color="pink" onClick={() => {}} />
+      <CommonBtn
+        label={MODAL_COPY.BUTTON_CANCEL}
+        color="blue"
+        onClick={closeModal}
+      />
+      <CommonBtn
+        label={MODAL_COPY.BUTTON_ADD}
+        color="pink"
+        onClick={() => {}}
+      />
     </div>
   );
 }
