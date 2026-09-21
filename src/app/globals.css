@@ -5,7 +5,8 @@
   --foreground: #171717;
 
   /* Bookshelf Page Background Token */
-  --bookshelf-bg: linear-gradient(180deg, #3828d8 0%, #3425cc 40%, #3021b8 100%);
+  --bookshelf-bg:
+    linear-gradient(180deg, #2D18FF 0%, #2914F2 40%, #2512DB 100%);
 
   /* Brand Header Tokens */
   --brand-title: #ffc2e3;
