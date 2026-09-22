@@ -1,38 +1,56 @@
+"use client";
 import { useModalStore } from "@/store/useModalStore";
-import { ShelfCarousel, CommonBtn } from "../index";
+import {
+  ShelfCarousel,
+  CommonBtn,
+  CatalogBookList,
+} from "@/app/components/index";
+import { MODAL_COPY } from "@/constants/copy";
+import { useState } from "react";
 
 export default function AddBookModal() {
-    return (
-        <section className="modal min-w-2xl min-h-1/2 p-3 flex flex-col">
-            <header className="bg-linear-to-b from-white/40 to-white/10 rounded-[28px_28px_50%_50%] pt-4 pb-10 text-center h-1/3">
-                <p className="text-brand-stroke">✦</p>
-                <small className="font-bold text-btn-blue mb-1 tracking-widest uppercase text-xs">book catalog</small>
-                <h2 className="text-brand-stroke  font-bold text-[28px] font-serif-brand italic ">which book should join the shelf?</h2>
-            </header>
-            <div className="flex-1 h-full flex flex-col justify-between">
-                <ShelfCarousel />
-                <ButtonGroup />
-            </div>
-        </section>
-    )
+  const [selected, setSelected] = useState<string | null>(null);
+  return (
+    <section className="glass-panel flex min-h-1/2 flex-col p-6">
+      <AddBookModalHeader />
+      <div className="flex h-full flex-1 flex-col justify-between">
+        <ShelfCarousel>
+          <CatalogBookList selected={selected} setSelected={setSelected} />
+        </ShelfCarousel>
+        <ButtonGroup />
+      </div>
+    </section>
+  );
 }
 
+export function AddBookModalHeader() {
+  return (
+    <header className="h-1/3 rounded py-4 text-center">
+      <p className="text-brand-stroke">✦</p>
+      <small className="text-secondary-foreground mb-1 text-xs font-bold tracking-widest uppercase">
+        {MODAL_COPY.BADGE}
+      </small>
+      <h2 className="font-serif-brand text-brand-stroke text-[28px] font-bold italic">
+        {MODAL_COPY.HEADING}
+      </h2>
+    </header>
+  );
+}
 
 export function ButtonGroup() {
-    const { closeModal } = useModalStore()
-
-    return (
-        <div className="w-full gap-2 inline-flex items-center justify-center my-3">
-            <CommonBtn
-                label="cancel"
-                color="blue"
-                onClick={closeModal}
-            />
-            <CommonBtn
-                label="add to shelf"
-                color="pink"
-                onClick={() => { }}
-            />
-        </div>
-    )
+  const { closeModal } = useModalStore();
+  return (
+    <div className="inline-flex w-full items-center justify-center gap-2 pt-7 pb-3">
+      <CommonBtn
+        label={MODAL_COPY.BUTTON_CANCEL}
+        color="blue"
+        onClick={closeModal}
+      />
+      <CommonBtn
+        label={MODAL_COPY.BUTTON_ADD}
+        color="pink"
+        onClick={() => {}}
+      />
+    </div>
+  );
 }

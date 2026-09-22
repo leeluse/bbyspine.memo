@@ -29,11 +29,15 @@ for (const workspace of workspaces) {
     throw new Error(`${workspace.id} is missing route or frame metadata.`);
   }
 
-  if (!workspace.uses?.every((id) => components.some((item) => item.id === id))) {
+  if (
+    !workspace.uses?.every((id) => components.some((item) => item.id === id))
+  ) {
     throw new Error(`${workspace.id} references an unregistered component.`);
   }
 
-  if (!workspace.phases?.every((phase) => phase.id && phase.name && phase.route)) {
+  if (
+    !workspace.phases?.every((phase) => phase.id && phase.name && phase.route)
+  ) {
     throw new Error(`${workspace.id} contains an invalid phase.`);
   }
 }

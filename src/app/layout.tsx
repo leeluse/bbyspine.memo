@@ -36,12 +36,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${notoSansKr.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <ReactQueryProvider>
-          {children}
-        </ReactQueryProvider>
+      <body className="flex min-h-full flex-col">
+        <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>
   );
 }
-
